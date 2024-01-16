@@ -1,6 +1,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 
+
 class SplashScreen:
     def __init__(self, root):
         self.splash = root

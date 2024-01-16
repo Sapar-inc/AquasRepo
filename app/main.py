@@ -58,7 +58,7 @@
 
 
 import tkinter as tk
-from spash_screen import SplashScreen
+from splash_screen import SplashScreen
 from app.menu import menu_page
 
 def main():

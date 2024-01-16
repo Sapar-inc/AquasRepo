@@ -1,5 +1,6 @@
 import tkinter as tk
-from app.tables import Application
+from tables import Application
+import splash_screen
 
 def main():
     root = tk.Tk()
@@ -14,6 +15,7 @@ def about():
     # Логика для перехода на страницу about()
     pass
 
+
 def open_tables(master):
     # Создание окна таблиц при нажатии кнопки
     root_tables = tk.Toplevel(master)
@@ -23,6 +25,7 @@ def open_tables(master):
     app_tables = Application(master=root_tables)
     app_tables.pack(expand=True, fill='both')  # Подгонка виджета по размерам окна
     app_tables.mainloop()  # Запуск цикла для отображения окна
+
 
 def menu_page(root):
     menu = root
@@ -51,6 +54,7 @@ def menu_page(root):
 
     btn_tables = tk.Button(frame, text='Tables', command=lambda: open_tables(menu))
     btn_tables.grid(row=3, column=0, sticky="w")
+
 
 # Запуск приложения
 if __name__ == "__main__":

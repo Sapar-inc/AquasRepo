@@ -58,20 +58,9 @@
 
 
 import tkinter as tk
-from splash_screen import SplashScreen
-from app.menu import menu_page
-
-def main():
-    root = tk.Tk()
-    splash = SplashScreen(root)
-    splash.show()
-
-    # Показать меню после закрытия splash screen
-    menu_page(root)
-
-    root.mainloop()
+# from splash_screen import show_splash
+# from menu import menu_page
+from menu import start
 
 if __name__ == "__main__":
-    main()
-
-
+    start()

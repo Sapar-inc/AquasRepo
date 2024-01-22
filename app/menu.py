@@ -1,8 +1,10 @@
 import tkinter as tk
 from tables import Application
-import splash_screen
+from splash_screen import show_splash
+import dataview
 
-def main():
+def start():
+    show_splash()
     root = tk.Tk()
     menu_page(root)
     root.mainloop()
@@ -18,13 +20,7 @@ def about():
 
 def open_tables(master):
     # Создание окна таблиц при нажатии кнопки
-    root_tables = tk.Toplevel(master)
-    root_tables.title("Tables Page")
-
-    # Создание экземпляра класса Application из файла tables.py
-    app_tables = Application(master=root_tables)
-    app_tables.pack(expand=True, fill='both')  # Подгонка виджета по размерам окна
-    app_tables.mainloop()  # Запуск цикла для отображения окна
+    dataview.table_page(master)
 
 
 def menu_page(root):
@@ -43,7 +39,7 @@ def menu_page(root):
     frame.place(x=0, y=0)
 
     # Создание кнопок меню
-    btn_main = tk.Button(frame, text='Main', command=main)
+    btn_main = tk.Button(frame, text='Main', command=start)
     btn_main.grid(row=0, column=0, sticky="w")
 
     btn_settings = tk.Button(frame, text='Settings', command=settings)
@@ -56,6 +52,3 @@ def menu_page(root):
     btn_tables.grid(row=3, column=0, sticky="w")
 
 
-# Запуск приложения
-if __name__ == "__main__":
-    main()
